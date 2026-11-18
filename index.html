@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Motivation — Chaque jour compte</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --accent: #f59e0b;
+    --accent2: #fbbf24;
+    --text: #f8fafc;
+    --muted: #94a3b8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #172554 100%);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  header {
+    text-align: center;
+    padding: 60px 20px 30px;
+  }
+  header h1 {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    color: var(--accent2);
+  }
+  header p {
+    color: var(--muted);
+    margin-top: 10px;
+    font-style: italic;
+  }
+  .quote-box {
+    max-width: 700px;
+    margin: 20px auto;
+    background: var(--card);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+  .quote-box blockquote {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    min-height: 90px;
+  }
+  .quote-box cite {
+    display: block;
+    margin-top: 15px;
+    color: var(--accent);
+    font-size: 1rem;
+  }
+  .btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 28px;
+    background: var(--accent);
+    color: #1c1917;
+    border: none;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .btn:hover { background: var(--accent2); transform: scale(1.05); }
+  section { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+  section h2 {
+    text-align: center;
+    color: var(--accent2);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: transform 0.25s;
+  }
+  .card:hover { transform: translateY(-6px); }
+  .card svg { display: block; width: 100%; height: 140px; }
+  .card .label {
+    padding: 16px;
+    text-align: center;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .goals ul { list-style: none; max-width: 500px; margin: 0 auto; }
+  .goals li {
+    background: var(--card);
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .goals li.done { opacity: 0.55; text-decoration: line-through; }
+  .goals li span.box {
+    width: 22px; height: 22px;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  footer {
+    text-align: center;
+    padding: 30px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>✦ Motivation</h1>
+  <p>Chaque jour est une nouvelle chance de devenir meilleur.</p>
+</header>
+
+<div class="quote-box">
+  <blockquote id="quote">« La discipline est le pont entre les objectifs et les accomplissements. »</blockquote>
+  <cite id="author">— Jim Rohn</cite>
+  <button class="btn" onclick="nextQuote()">Nouvelle citation</button>
+</div>
+
+<section>
+  <h2>Galerie d'inspiration</h2>
+  <div class="gallery">
+    <div class="card">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#b45309"/>
+        </linearGradient></defs>
+        <rect width="200" height="140" fill="url(#g1)"/>
+        <circle cx="100" cy="60" r="30" fill="#fde68a"/>
+        <rect x="0" y="100" width="200" height="40" fill="#78350f"/>
+      </svg>
+      <div class="label">Lève-toi et brille</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#1d4ed8"/><stop offset="1" stop-color="#0f172a"/>
+        </linearGradient></defs>
+        <rect width="200" height="140" fill="url(#g2)"/>
+        <path d="M20 120 L70 60 L110 95 L180 25" stroke="#93c5fd" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="180" cy="25" r="8" fill="#fbbf24"/>
+      </svg>
+      <div class="label">Vise toujours plus haut</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#059669"/><stop offset="1" stop-color="#064e3b"/>
+        </linearGradient></defs>
+        <rect width="200" height="140" fill="url(#g3)"/>
+        <path d="M100 110 C 100 70, 70 60, 60 40 C 90 50, 95 65, 100 80 C 105 60, 115 50, 140 35 C 125 65, 110 75, 100 110 Z" fill="#a7f3d0"/>
+      </svg>
+      <div class="label">Pousse tes limites</div>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#2e1065"/>
+        </linearGradient></defs>
+        <rect width="200" height="140" fill="url(#g4)"/>
+        <circle cx="100" cy="70" r="35" fill="none" stroke="#ddd6fe" stroke-width="5"/>
+        <path d="M85 70 L96 82 L118 55" stroke="#a78bfa" stroke-width="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="label">Crois en toi</div>
+    </div>
+  </div>
+</section>
+
+<section class="goals">
+  <h2>Mes objectifs du jour</h2>
+  <ul id="goalList">
+    <li onclick="toggle(this)"><span class="box"></span> Me lever tôt et commencer la journée avec énergie</li>
+    <li onclick="toggle(this)"><span class="box"></span> Travailler 1 heure sur mon projet principal</li>
+    <li onclick="toggle(this)"><span class="box"></span> Faire du sport ou marcher 30 minutes</li>
+    <li onclick="toggle(this)"><span class="box"></span> Lire 10 pages d'un livre inspirant</li>
+  </ul>
+</section>
+
+<footer>Fait avec détermination — ne lâche jamais.</footer>
+
+<script>
+  const quotes = [
+    ["La discipline est le pont entre les objectifs et les accomplissements.", "Jim Rohn"],
+    ["Le succès, c'est tomber sept fois et se relever huit.", "Proverbe japonais"],
+    ["Le meilleur moment pour planter un arbre était il y a vingt ans. Le deuxième meilleur moment, c'est maintenant.", "Proverbe chinois"],
+    ["N'attends pas le moment parfait. Prends le moment et rends-le parfait.", "Zoey Sayward"],
+    ["Petit à petit, l'oiseau fait son nid.", "Proverbe français"],
+    ["Ta seule limite, c'est toi-même.", "Anonyme"],
+    ["Le courage ne signifie pas l'absence de peur, mais la capacité de la vaincre.", "Nelson Mandela"]
+  ];
+  let i = 0;
+  function nextQuote() {
+    i = (i + 1) % quotes.length;
+    document.getElementById('quote').textContent = '« ' + quotes[i][0] + ' »';
+    document.getElementById('author').textContent = '— ' + quotes[i][1];
+  }
+  function toggle(el) {
+    el.classList.toggle('done');
+    const box = el.querySelector('.box');
+    box.textContent = el.classList.contains('done') ? '✓' : '';
+  }
+</script>
+
+</body>
+</html>
